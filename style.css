@@ -1,216 +1,159 @@
-/* General Styles */
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
+  background: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
-/* Top Navigation Bar (Simplified) */
-.top-nav {
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #eee;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.top-nav a {
-    text-decoration: none;
-    color: #000;
-    margin-right: 15px;
-}
-.top-nav .site-logo {
-    font-weight: bold;
-    text-decoration: none;
-    color: #000;
-}
-.top-nav .search-cart {
-    display: flex;
-    align-items: center;
-}
-.top-nav .search-cart a {
-    margin-left: 15px;
-}
-.top-nav .search-cart .search-icon {
-    margin-right: 5px;
+/* Container utama */
+.container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  width: 100%;
+  max-width: 950px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
 }
 
-/* Breadcrumb Navigation */
-.breadcrumb {
-    padding: 10px 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
-}
-.breadcrumb a {
-    color: #007bff;
-    text-decoration: none;
-}
-.breadcrumb span {
-    color: #6c757d;
+/* Sidebar kiri */
+.sidebar {
+  background: linear-gradient(180deg, #0b67a6, #145a8a);
+  color: white;
+  padding: 20px;
 }
 
-/* Main Product Layout */
-.product-container {
-    display: flex;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.product-image-section {
-    flex: 1;
-    padding-right: 20px;
-}
-.product-details-section {
-    flex: 2;
+.sidebar .photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-/* --- GAMBAR UTAMA (Penting untuk menampilkan foto dengan benar) --- */
-
-/* Wrapper untuk mempertahankan rasio 1:1 seperti di mockup */
-.main-image-wrapper {
-    width: 100%;
-    padding-top: 100%; 
-    position: relative;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    overflow: hidden; 
+.sidebar .name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 4px;
 }
 
-/* Gambar itu sendiri */
-.main-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Memastikan gambar terisi penuh tanpa distorsi */
-    display: block;
+.sidebar .nim,
+.sidebar .muted {
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
-/* Thumbnail Placeholders */
-.thumbnails {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-.thumbnail-placeholder {
-    width: 50px;
-    height: 50px;
-    border: 1px solid #ccc;
-    background-color: #f0f0f0; /* Masih menggunakan latar abu-abu seperti mockup */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    color: #aaa;
-    box-sizing: border-box;
-    cursor: pointer;
-}
-.thumbnail-placeholder.selected {
-    border: 2px solid #000;
+.section-title {
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 3px;
 }
 
-/* Order Button */
-.order-button {
-    background-color: #dc3545; 
-    color: white;
-    border: none;
-    padding: 10px 20px;
+.contact, .skills, .langs {
+  font-size: 14px;
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+/* Konten utama */
+.main {
+  padding: 20px;
+}
+
+h2 {
+  font-size: 22px;
+  color: #0b67a6;
+  margin-bottom: 10px;
+}
+
+.summary {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.block {
+  margin-bottom: 20px;
+}
+
+.block h3 {
+  font-size: 18px;
+  color: #0b67a6;
+  margin-bottom: 8px;
+  border-left: 4px solid #0b67a6;
+  padding-left: 8px;
+}
+
+.job, .edu, .project {
+  margin-bottom: 12px;
+  padding-left: 10px;
+  border-left: 3px solid #ccc;
+}
+
+.job-title {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.meta {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+ul {
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-weight: bold;
+  }
+  .sidebar .photo {
+    margin: 0 auto 10px;
+  }
+}
+/* Foto Profil */
+.photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* Product Details */
-h1 {
-    font-size: 28px;
-    margin-top: 0;
-    margin-bottom: 5px;
-}
-.price {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-.reviews {
-    color: #ffc107; 
-    margin-bottom: 15px;
-}
-.reviews span {
-    color: #6c757d;
-    font-size: 14px;
-}
-
-/* Variant Selectors (Colors & Sizes) */
-.variant-group {
-    margin-bottom: 20px;
-}
-.variant-label {
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: block;
-}
-.variant-options {
-    display: flex;
-    gap: 10px;
-}
-.variant-box {
-    width: 50px;
-    height: 50px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-size: 14px;
-}
-.variant-box.size {
-    width: 60px;
-    height: 40px;
-    font-weight: bold;
-    border-radius: 4px;
-}
-.variant-box.selected {
-    border: 2px solid #000; 
-}
-
-/* Product Description */
-.product-description h2 {
-    font-size: 20px;
-    margin-top: 20px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
-}
-
-/* Trik CSS untuk menyerupai coretan teks pada mockup: */
-.product-description p {
-    line-height: 1.6;
-    background: repeating-linear-gradient(
-        to bottom,
-        transparent,
-        transparent 1.2em,
-        #f0f0f0 1.2em,
-        #f0f0f0 1.3em
-    );
-    background-size: 100% 1.6em;
-    color: transparent;
-    text-shadow: 0 0 0 #333; 
-}
-.product-description h2, .product-description strong {
-    background: none;
-    text-shadow: none;
-    color: #333;
-}
-.product-description .real-description {
-    background: none;
-    text-shadow: none;
-    color: #333;
-    padding: 10px 0;
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
