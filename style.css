@@ -1,0 +1,159 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Container utama */
+.container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  width: 100%;
+  max-width: 950px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Sidebar kiri */
+.sidebar {
+  background: linear-gradient(180deg, #0b67a6, #145a8a);
+  color: white;
+  padding: 20px;
+}
+
+.sidebar .photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sidebar .name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.sidebar .nim,
+.sidebar .muted {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 3px;
+}
+
+.contact, .skills, .langs {
+  font-size: 14px;
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+/* Konten utama */
+.main {
+  padding: 20px;
+}
+
+h2 {
+  font-size: 22px;
+  color: #0b67a6;
+  margin-bottom: 10px;
+}
+
+.summary {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.block {
+  margin-bottom: 20px;
+}
+
+.block h3 {
+  font-size: 18px;
+  color: #0b67a6;
+  margin-bottom: 8px;
+  border-left: 4px solid #0b67a6;
+  padding-left: 8px;
+}
+
+.job, .edu, .project {
+  margin-bottom: 12px;
+  padding-left: 10px;
+  border-left: 3px solid #ccc;
+}
+
+.job-title {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.meta {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+ul {
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    text-align: center;
+  }
+  .sidebar .photo {
+    margin: 0 auto 10px;
+  }
+}
+/* Foto Profil */
+.photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
