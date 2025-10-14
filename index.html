@@ -1,101 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="style.css">
-  <title>CV - MULKI FAHRUDIEN - 0110225084</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan Risol Mayo Spesial</title>
+    <link rel="stylesheet" href="mulki.css">
 </head>
 <body>
-  <div class="container" role="main">
-    <!-- Sidebar -->
-    <aside class="sidebar" aria-label="Informasi kontak">
-      <div style="display:flex;flex-direction:column;align-items:flex-start;">
-        <div class="photo">
-        <img src="mulki.jpg" alt="Foto Profil Mulki Fahrudien">
+    <div class="web-page-mockup">
+        <div class="browser-bar">
+            <span class="browser-controls"></span>
+            <input type="text" value="http://aplikasi.makanan/risol/pesan" class="address-bar"> 
+            <span class="close-btn">X</span>
         </div>
-        <div class="name">MULKI FAHRUDIEN</div>
-        <div class="nim">NIM: 0110225084</div>
-        <div class="muted">Program Studi: TEKNIK INFORMATIKA</div>
-      </div>
-
-      <div class="section-title">Kontak</div>
-      <div class="contact">
-        Email: <a href="mailto:Mulkifkhrdn@gmail.com" style="color:white;text-decoration:underline">Mulkifkhrdn@gmail.com</a><br>
-        Telepon: 085891260622<br>
-        Alamat: JL. KSU RAYA GG RUBIN RT 03 RW 01
-      </div>
-
-      <div class="section-title">Keahlian</div>
-      <div class="skills">
-        - Main hadroh<br>
-        - Mudah beradaptasi<br>
-        - Digital marketing<br>
-        - Git & GitHub
-      </div>
-
-      <div class="section-title">Bahasa</div>
-      <div class="langs">Indonesia (aktif)<br>Inggris (menengah)</div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main" aria-label="Curriculum Vitae">
-      <header>
-        <h2>Ringkasan</h2>
-        <div class="summary">
-          Saya adalah mahasiswa Teknik Informatika yang memiliki minat di bidang teknologi, digital marketing, serta aktif dalam kegiatan keagamaan dan organisasi.
+        
+        <div class="nav-bar">
+            <a href="#">Beranda</a>
+            <a href="#">Menu</a>
+            <a href="#">Status Pesanan</a>
+            <a href="#">Promosi</a>
+            <a href="#">Keluar</a>
         </div>
-      </header>
+        
+        <div class="form-container">
+            <h3>Pesan Risol Mayo Spesial</h3>
+            <form id="formPemesanan">
+                <div class="form-row">
+                    <div class="image-upload-section">
+                        <img src="risol.jpeg" alt="Risol Mayo Spesial" class="product-image">
+                        <button type="button">Lihat Resep</button>
+                    </div>
 
-      <section class="block">
-        <h3>Pendidikan</h3>
-        <div class="edu">
-          <div class="job">
-            <div class="job-title">SDN Pelamampang 12 Pagi, Jakarta</div>
-            <div class="meta">2008 - 2014</div>
-          </div>
-          <div class="job">
-            <div class="job-title">SMP Negeri 1 Bojonggede</div>
-            <div class="meta">2014 - 2017</div>
-          </div>
-          <div class="job">
-            <div class="job-title">SMA Negeri 1 Bojonggede</div>
-            <div class="meta">2017 - 2020</div>
-          </div>
+                    <div class="form-fields-section">
+                        <label for="titleName">Nama Produk:</label>
+                        <input type="text" id="titleName" value="Risol Mayo Frozen Isi 5">
+
+                        <label for="description">Deskripsi:</label>
+                        <input type="text" id="description" value="Varian: Original Pedas M"> <label for="model">Catatan:</label>
+                        <input type="text" id="model" value="Mohon kemas dengan t"> <label for="accountNumber">Kode Pesanan:</label>
+                        <input type="text" id="accountNumber" value="ORD-RSL-005">
+                        
+                        <label for="bank">Metode Bayar:</label>
+                        <input type="text" id="bank" value="E-Wallet DANA">
+
+                        <label for="accountHolder">Nama Pemesan:</label>
+                        <input type="text" id="accountHolder" value="Siska Dewi"> <label for="transaction">Jumlah Porsi/Pack:</label>
+                        <input type="text" id="transaction" value="3">
+                        
+                        <p class="instruction-text">*Jumlah harga akan otomatis disesuaikan (Rp 25.000/pack).</p>
+                        
+                        <div class="communication-options">
+                            <label><input type="checkbox" id="checkMobile" checked> Notifikasi SMS</label>
+                            <input type="text" id="mobileNumbers" value="0811223344">
+                            
+                            <label><input type="checkbox" id="checkEmail" checked> Kirim Struk Email</label>
+                            <input type="text" id="emails" value="siska.dewi@mail.com">
+                        </div>
+
+                        <button type="button" class="generate-link-btn" onclick="prosesPemesananRisol()">Konfirmasi & Lanjut Bayar</button>
+                    </div>
+                </div>
+            </form>
         </div>
-      </section>
+    </div>
 
-      <section class="block">
-        <h3>Pengalaman Kerja / Organisasi</h3>
-        <div class="job">
-          <div class="job-title">Divisi Penerangan dan Bahasa - OSPQN</div>
-          <div class="meta">Juli 2021 - Juli 2023</div>
-          <ul>
-            <li>Mengelola informasi dan publikasi kegiatan organisasi</li>
-            <li>Membantu dalam komunikasi antaranggota</li>
-          </ul>
-        </div>
-      </section>
+    <script>
+        function prosesPemesananRisol() {
+            const porsi = parseInt(document.getElementById('transaction').value) || 1;
+            const hargaSatuan = 25000; 
+            const totalBayar = porsi * hargaSatuan;
 
-      <section class="block">
-        <h3>Proyek / Kegiatan</h3>
-        <div class="project">
-          <div class="job-title">Panitia Maulid di Pesantren</div>
-          <div class="meta">2022</div>
-          <ul>
-            <li>Menjadi bagian dari panitia acara keagamaan di pesantren</li>
-          </ul>
-        </div>
-      </section>
+            const dataPemesanan = {
+                titleName: document.getElementById('titleName').value,
+                description: document.getElementById('description').value,
+                model: document.getElementById('model').value,
+                totalAmount: `Rp ${totalBayar.toLocaleString('id-ID')}`, 
+                payTo: document.getElementById('accountNumber').value, // Kode Pesanan
+                accountHolder: document.getElementById('accountHolder').value, // Nama Pemesan
+                mobileNumbers: document.getElementById('mobileNumbers').value,
+                emails: document.getElementById('emails').value,
+                isSendMobile: document.getElementById('checkMobile').checked,
+                isSendEmail: document.getElementById('checkEmail').checked 
+            };
 
-      <section class="block">
-        <h3>Penghargaan & Sertifikat</h3>
-        <ul>
-          <li>Sertifikat OSPQN 2023</li>
-          <li>Piagam Panitia Maulid 2022</li>
-        </ul>
-      </section>
-    </main>
-  </div>
+            // Gunakan kunci 'dataPemesananRisol'
+            localStorage.setItem('dataPemesananRisol', JSON.stringify(dataPemesanan));
+            window.location.href = 'masuk.html';
+        }
+    </script>
 </body>
 </html>

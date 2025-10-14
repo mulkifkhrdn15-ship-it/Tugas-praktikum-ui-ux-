@@ -1,0 +1,294 @@
+/* ================================================= */
+/* GAYA CSS MODERN (styles_makanan.css)              */
+/* ================================================= */
+
+/* Variabel CSS dengan Tema Makanan */
+:root {
+    --warna-utama: #ff7f50;        /* Coral/Orange untuk aksi */
+    --warna-sekunder: #4b4b4b;     /* Abu-abu gelap */
+    --warna-sukses: #4CAF50;       /* Hijau segar untuk tombol Bayar */
+    --warna-latar-terang: #fefefe; /* Latar belakang bersih */
+    --warna-teks-gelap: #333;      /* Teks utama */
+    --warna-border: #e0e0e0;       /* Border lembut */
+    --bayangan-ringan: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --radius-kecil: 4px;
+    --radius-sedang: 10px;
+}
+
+/* Reset Umum dan Styling Body */
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif; /* Menggunakan font modern */
+    background-color: var(--warna-latar-terang);
+    margin: 0;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Container Utama */
+.web-page-mockup {
+    width: 850px;
+    max-width: 95%;
+    background-color: white;
+    box-shadow: var(--bayangan-ringan);
+    border-radius: var(--radius-sedang);
+    overflow: hidden;
+}
+
+/* Bilah Browser */
+.browser-bar {
+    background-color: #f1f1f1;
+    border-bottom: 1px solid var(--warna-border);
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.browser-controls {
+    width: 40px;
+    height: 10px;
+    background: radial-gradient(circle at 10% 50%, #fc605c 5px, transparent 6px), 
+                radial-gradient(circle at 50% 50%, #fdbc40 5px, transparent 6px), 
+                radial-gradient(circle at 90% 50%, #34c749 5px, transparent 6px);
+    background-size: 100% 100%;
+}
+
+.address-bar {
+    flex-grow: 1;
+    border: 1px solid var(--warna-border);
+    padding: 4px 10px;
+    background-color: white;
+    font-size: 13px;
+    border-radius: var(--radius-kecil);
+}
+
+/* Bilah Navigasi */
+.nav-bar {
+    background-color: var(--warna-sekunder);
+    padding: 12px 20px;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.nav-bar a:hover {
+    color: var(--warna-utama);
+}
+
+/* Kontainer Form */
+.form-container {
+    padding: 30px;
+}
+
+.form-container h3 {
+    text-align: center;
+    color: var(--warna-teks-gelap);
+    margin-bottom: 30px;
+    font-weight: 600;
+    border-bottom: 2px solid var(--warna-utama);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.form-row, .order-result-content {
+    display: flex;
+    gap: 30px;
+}
+
+/* Bagian Upload Gambar/Ilustrasi */
+.image-upload-section {
+    min-width: 250px;
+    max-width: 250px;
+    text-align: center;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 200px;
+    border: 2px solid var(--warna-utama);
+    background-color: #fffaf0; /* Latar belakang krem lembut */
+    margin-bottom: 15px;
+    border-radius: var(--radius-sedang);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--warna-utama);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.image-upload-section button {
+    padding: 8px 15px;
+    background-color: var(--warna-sekunder);
+    color: white;
+    border: none;
+    border-radius: var(--radius-kecil);
+    cursor: pointer;
+}
+
+/* Bagian Input Form */
+.form-fields-section {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 140px 1fr; 
+    gap: 15px 20px; 
+    align-items: center;
+}
+
+.form-fields-section label {
+    text-align: right;
+    font-weight: 500;
+    color: var(--warna-teks-gelap);
+}
+
+.form-fields-section input[type="text"],
+.form-fields-section select {
+    padding: 10px;
+    border: 1px solid var(--warna-border);
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: var(--radius-kecil);
+}
+
+.form-fields-section input[type="text"]:focus,
+.form-fields-section select:focus {
+    border-color: var(--warna-utama);
+    box-shadow: 0 0 0 0.2rem rgba(255, 127, 80, 0.2);
+    outline: none;
+}
+
+.instruction-text {
+    grid-column: 2 / 3;
+    font-size: 0.85em;
+    color: var(--warna-sekunder);
+}
+
+/* Opsi Komunikasi */
+.communication-options {
+    grid-column: 1 / 3; 
+    margin-top: 15px;
+    border-top: 1px dashed var(--warna-border);
+    padding-top: 15px;
+}
+
+.communication-options label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    font-weight: 400;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.communication-options input[type="text"] {
+    margin-bottom: 15px;
+}
+
+.generate-link-btn {
+    grid-column: 2 / 3;
+    justify-self: end;
+    padding: 12px 25px;
+    background-color: var(--warna-utama);
+    color: white;
+    border: none;
+    border-radius: var(--radius-kecil);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.generate-link-btn:hover {
+    background-color: #e56d44;
+}
+
+
+/* --- Styling untuk Form Hasil Pemesanan Makanan (hasil_makanan.html) --- */
+
+.result-fields p {
+    margin: 5px 0;
+    padding: 0;
+    font-size: 1em;
+    grid-column: 1 / 3;
+    color: var(--warna-teks-gelap);
+}
+
+.highlight-total {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--warna-sukses); /* Hijau untuk menyorot total */
+}
+
+/* Grouping untuk input di form hasil */
+.result-fields .input-group {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 10px 20px;
+    align-items: center;
+    margin-top: 10px;
+    grid-column: 1 / 3;
+}
+
+/* Input read-only */
+.result-fields input[readonly] {
+    background-color: #f7f7f7;
+}
+
+/* Opsi Komunikasi (Form Hasil) */
+.communication-options-result {
+    grid-column: 1 / 3;
+    margin-top: 20px;
+    border-top: 1px dashed var(--warna-border);
+    padding-top: 15px;
+}
+
+.pay-btn {
+    grid-column: 1 / 3;
+    width: 80%;
+    margin: 30px auto 0 auto;
+    padding: 15px 25px;
+    background-color: var(--warna-sukses); 
+    color: white;
+    border: none;
+    border-radius: var(--radius-kecil);
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(76, 175, 80, 0.4);
+}
+
+.pay-btn:hover {
+    background-color: #388e3c;
+}
+
+/* --- Penyesuaian CSS untuk Gambar Produk --- */
+
+/* Sembunyikan placeholder jika ada gambar */
+.image-upload-section .image-placeholder {
+    /* Atur agar placeholder terlihat sebelum gambar dimuat atau jika gambar tidak ada */
+    display: flex; 
+    /* Hapus jika Anda ingin menggunakan gambar sebagai satu-satunya elemen */
+    /* Jika Anda ingin menggunakan gambar, Anda bisa sembunyikan placeholder-nya */
+}
+
+/* Style untuk tag IMG produk */
+.image-upload-section .product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Memastikan gambar memenuhi area tanpa terdistorsi */
+    border-radius: var(--radius-sedang);
+    border: 1px solid var(--warna-border);
+    margin-bottom: 15px;
+}

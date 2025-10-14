@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Pemesanan Risol Mayo</title>
+    <link rel="stylesheet" href="mulki.css">
+</head>
+<body>
+    <div class="web-page-mockup">
+        <div class="browser-bar">
+            <span class="browser-controls"></span>
+            <input type="text" value="http://aplikasi.makanan/risol/hasil" class="address-bar">
+            <span class="close-btn">X</span>
+        </div>
+        
+        <div class="nav-bar">
+            <a href="#">Beranda</a>
+            <a href="#">Ulang Pesan</a>
+            <a href="#">Bantuan</a>
+            <a href="#">Tentang</a>
+        </div>
+        
+        <div class="form-container result-form">
+            <h3>Rincian Pembayaran Pesanan Risol</h3>
+            <div class="order-result-content">
+                <div class="image-upload-section">
+                    <div class="image-placeholder">✅ Pesanan Dikonfirmasi</div>
+                </div>
+
+                <div class="form-fields-section result-fields">
+                    <p><strong>Nama Produk:</strong> <span id="displayTitleName">...</span></p>
+                    <p><strong>Deskripsi:</strong> <span id="displayDescription">...</span></p>
+                    <p><strong>Catatan:</strong> <span id="displayModel">...</span></p>
+                    <p><strong>TOTAL BAYAR:</strong> <span id="displayTotalAmount" class="highlight-total">...</span></p>
+                    
+                    <div class="input-group">
+                        <label for="payToResult">Kode Pesanan:</label>
+                        <input type="text" id="payToResult" readonly>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="paymentType">Metode Bayar:</label>
+                        <select id="paymentType">
+                            <option value="qris" selected>QRIS</option>
+                            <option value="cod">Bayar di Tempat (COD)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="accountHolderResult">Nama Pemesan:</label>
+                        <input type="text" id="accountHolderResult" readonly>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="accountNoResult">Alamat Kirim:</label>
+                        <input type="text" id="accountNoResult" value="Jl. Sudirman No. 12, Jakarta">
+                    </div>
+
+                    <div class="communication-options-result">
+                        <label>
+                            <input type="checkbox" id="checkMobileResult" disabled> Notifikasi SMS
+                            <input type="text" id="mobileNumbersResult" readonly>
+                        </label>
+                        
+                        <label>
+                            <input type="checkbox" id="checkEmailResult" disabled> Kirim Struk Email
+                            <input type="text" id="emailsResult" readonly>
+                        </label>
+                    </div>
+
+                    <button type="button" class="pay-btn">Selesaikan Pembayaran</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ambil data dari kunci yang benar
+            const dataString = localStorage.getItem('dataPemesananRisol'); 
+
+            if (dataString) {
+                const data = JSON.parse(dataString);
+                
+                // Isi Detail Produk
+                document.getElementById('displayTitleName').textContent = data.titleName;
+                document.getElementById('displayDescription').textContent = data.description;
+                document.getElementById('displayModel').textContent = data.model;
+                document.getElementById('displayTotalAmount').textContent = data.totalAmount;
+
+                // Isi Detail Pembayaran
+                document.getElementById('payToResult').value = data.payTo;
+                document.getElementById('accountHolderResult').value = data.accountHolder;
+
+                // Isi Detail Komunikasi
+                document.getElementById('mobileNumbersResult').value = data.mobileNumbers;
+                document.getElementById('emailsResult').value = data.emails;
+                
+                // Atur status checkbox
+                document.getElementById('checkMobileResult').checked = data.isSendMobile;
+                document.getElementById('checkEmailResult').checked = data.isSendEmail;
+                
+            } else {
+                console.warn("Data pesanan Risol tidak ditemukan.");
+            }
+        });
+    </script>
+</body>
+</html>
